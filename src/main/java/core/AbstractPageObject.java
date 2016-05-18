@@ -1,4 +1,4 @@
-package content.pages;
+package core;
 
 import core.PageObjectFactoryUtils;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
  * Created by def on 17.05.2016.
  */
 
-public class AbstractPage {
+public class AbstractPageObject {
 
     @Autowired
     protected WebDriver webDriver;
