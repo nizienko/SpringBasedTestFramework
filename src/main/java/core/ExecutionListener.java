@@ -10,6 +10,7 @@ import org.springframework.test.context.TestExecutionListener;
 public class ExecutionListener implements TestExecutionListener {
 
     public void beforeTestClass(TestContext testContext) throws Exception {
+
     }
 
     public void prepareTestInstance(TestContext testContext) throws Exception {

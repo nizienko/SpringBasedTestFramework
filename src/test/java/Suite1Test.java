@@ -13,7 +13,7 @@ public class Suite1Test extends Suite {
     @Test
     public void test1(){
         googleSteps.open();
-        googleSteps.fillSearchField("Россия швеция");
+        googleSteps.fillSearchField("Россия Германия");
         commonSteps.wait(3000);
     }
 

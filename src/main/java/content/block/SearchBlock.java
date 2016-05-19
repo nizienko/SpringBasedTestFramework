@@ -1,8 +1,7 @@
 package content.block;
 
-import core.AbstractBlock;
-import core.AbstractPageObject;
-import core.Block;
+import core.block.AbstractBlock;
+import core.block.Block;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
  */
 
 @Block
+@FindBy(name = "f")
 public class SearchBlock extends AbstractBlock {
 
     @FindBy(name = "q")

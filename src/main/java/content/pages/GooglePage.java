@@ -1,19 +1,15 @@
 package content.pages;
 import content.block.SearchBlock;
-import core.AbstractPageObject;
-import core.Page;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.springframework.beans.factory.annotation.Autowired;
+import core.page.AbstractPage;
+import core.page.Page;
 
 /**
  * Created by def on 16.05.2016.
  */
 
 @Page
-public class GooglePage extends AbstractPageObject {
+public class GooglePage extends AbstractPage {
 
-    @FindBy(name = "f")
     private SearchBlock searchBlock;
 
     public void open() {

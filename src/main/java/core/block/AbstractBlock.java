@@ -1,9 +1,8 @@
-package core;
+package core.block;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
+import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 
 /**
  * Created by def on 18.05.2016.
@@ -18,7 +17,12 @@ public class AbstractBlock implements IBlock {
     }
 
     public void initHtmlElements() {
-        PageFactory.initElements(webDriver, this);
+        if (locator != null) {
+            PageFactory.initElements(new DefaultElementLocatorFactory(new BlockSearchContext(webDriver, locator)), this);
+        }
+        else {
+            PageFactory.initElements(webDriver, this);
+        }
     }
 
     public void setLocator(By locator) {

@@ -1,7 +1,7 @@
-package core;
+package core.page;
 
-import core.PageObjectFactoryUtils;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import javax.annotation.PostConstruct;
 
@@ -9,13 +9,13 @@ import javax.annotation.PostConstruct;
  * Created by def on 17.05.2016.
  */
 
-public class AbstractPageObject {
+public class AbstractPage {
 
     @Autowired
     protected WebDriver webDriver;
 
     @PostConstruct
     public void init(){
-        PageObjectFactoryUtils.init(webDriver, this);
+        PageFactory.initElements(webDriver, this);
     }
 }

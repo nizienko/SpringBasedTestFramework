@@ -1,6 +1,6 @@
 package content.steps;
 
-import core.Steps;
+import core.steps.Steps;
 
 /**
  * Created by def on 16.05.2016.

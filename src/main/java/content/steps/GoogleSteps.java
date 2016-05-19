@@ -1,7 +1,7 @@
 package content.steps;
 
 import content.pages.GooglePage;
-import core.Steps;
+import core.steps.Steps;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
