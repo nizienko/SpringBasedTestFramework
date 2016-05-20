@@ -26,7 +26,7 @@ public class InitBlockPostProcessor implements BeanPostProcessor {
                 if (field.getType().isAnnotationPresent(Block.class)) {
                     By locator = null;
                     if (field.isAnnotationPresent(FindBy.class) || field.getType().isAnnotationPresent(FindBy.class)) {
-                        locator = ((AbstractAnnotations)(new BlockAnnotations(field))).buildBy();
+                        locator = new BlockAnnotations(field).buildBy();
                     }
                     try {
                         Object o = field.getType().newInstance();
