@@ -1,13 +1,7 @@
-import content.steps.CommonSteps;
-import core.ExecutionListener;
-import core.FrameworkConfiguration;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import content.steps.GoogleSteps;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 
 /**
  * Created by def on 16.05.2016.

@@ -1,4 +1,4 @@
-package content;
+package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
  * Created by def on 16.05.2016.
  */
 
-@Component
 public class WebDriverPool {
     private ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<WebDriver>();
 

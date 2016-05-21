@@ -4,7 +4,8 @@ import core.page.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.pagefactory.AbstractAnnotations;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -32,11 +33,11 @@ public class InitBlockPostProcessor implements BeanPostProcessor {
                         Object o = field.getType().newInstance();
                         IBlock block = (IBlock) o;
                         block.setWebDriver(webDriver);
-                        block.setLocator(locator);
-                        block.initHtmlElements();
+                        block.setParentLocator(locator);
+                        initHtmlElements(locator, block);
 
                         field.setAccessible(true);
-                        field.set(bean, o);
+                        field.set(bean, block);
                     } catch (ReflectiveOperationException e) {
                         throw new RuntimeException(e);
                     }
@@ -48,5 +49,14 @@ public class InitBlockPostProcessor implements BeanPostProcessor {
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         return bean;
+    }
+
+    private void initHtmlElements(By locator, IBlock block) {
+        if (locator != null) {
+            PageFactory.initElements(new DefaultElementLocatorFactory(new BlockSearchContext(webDriver, locator)), block);
+        }
+        else {
+            PageFactory.initElements(webDriver, block);
+        }
     }
 }

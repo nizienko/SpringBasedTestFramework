@@ -10,22 +10,13 @@ import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 public class AbstractBlock implements IBlock {
     protected WebDriver webDriver;
 
-    private By locator;
+    private By parentLocator;
 
     public void setWebDriver(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void initHtmlElements() {
-        if (locator != null) {
-            PageFactory.initElements(new DefaultElementLocatorFactory(new BlockSearchContext(webDriver, locator)), this);
-        }
-        else {
-            PageFactory.initElements(webDriver, this);
-        }
-    }
-
-    public void setLocator(By locator) {
-        this.locator = locator;
+    public void setParentLocator(By parentLocator) {
+        this.parentLocator = parentLocator;
     }
 }

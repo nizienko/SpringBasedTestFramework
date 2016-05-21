@@ -9,6 +9,5 @@ import org.openqa.selenium.support.FindBy;
  */
 public interface IBlock {
     void setWebDriver(WebDriver webDriver);
-    void initHtmlElements();
-    void setLocator(By locator);
+    void setParentLocator(By locator);
 }
