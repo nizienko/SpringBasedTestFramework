@@ -13,11 +13,10 @@ import org.openqa.selenium.support.FindBy;
 @FindBy(name = "f")
 public class SearchBlock extends AbstractBlock {
 
-    @FindBy(name = "q")
-    private WebElement searchField;
+    private SubBlock subBlock;
 
-    public void fillSearchField(String text){
-        searchField.clear();
-        searchField.sendKeys(text);
+    public void fillSearchField(String text) {
+        subBlock.fillSearchField(text);
     }
+
 }

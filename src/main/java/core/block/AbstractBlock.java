@@ -10,7 +10,7 @@ import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 public class AbstractBlock implements IBlock {
     protected WebDriver webDriver;
 
-    private By parentLocator;
+    protected By parentLocator;
 
     public void setWebDriver(WebDriver webDriver) {
         this.webDriver = webDriver;
